@@ -13,11 +13,10 @@ export default class StringAnimation extends React.Component{
         content: "",
         da: false, // deleting = true, adding = false
     }
-    textref = React.createRef()
     
     render() {
         return(
-        <div ref = {this.textref}>
+        <div>
             {this.state.content + "_"}
         </div>
         )
@@ -27,6 +26,7 @@ export default class StringAnimation extends React.Component{
     componentDidMount() {
         this.tick = setInterval(this.handletick, 300)
     }
+    
     handletick = () => {
         if(this.state.da){
             if (this.state.content === ""){
