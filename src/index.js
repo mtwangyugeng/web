@@ -4,12 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import StringAnimation from './assets/stringanimation/StringAnimation'
+import LandingScene from './assets/threed/landingscene/LandingScene'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-    <StringAnimation strings = {["I am Sexy", "and I know it"]}/>
+    {/* <App /> */}
+    {/* <StringAnimation strings = {["yoloswag4jesus","I am Sexy", "and I know it"]}/> */}
+    <LandingScene />
   </React.StrictMode>,
   document.getElementById('root')
 );
