@@ -4,13 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import LandingScene from './assets/threed/landingscene/LandingScene'
+import Solarsystem from './assets/threed/solarsystem/Solarsystem';
+import Flame from './assets/threed/flame/Flame';
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <StringAnimation strings = {["yoloswag4jesus","I am Sexy", "and I know it"]}/> */}
-    <LandingScene />
+    {/* <LandingScene /> */}
+    <Flame/>
   </React.StrictMode>,
   document.getElementById('root')
 );
