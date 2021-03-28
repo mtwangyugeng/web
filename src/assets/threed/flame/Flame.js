@@ -79,6 +79,15 @@ export default class Flame extends React.Component{
 					light.add( lensflare );
 
 				}
+
+        const butterflyPivot = new THREE.Object3D();
+        scene.add(butterflyPivot);
+        const sphereGeometry = new THREE.SphereGeometry(
+          10, 3, 3);
+        const sunMaterial = new THREE.MeshPhongMaterial({emissive: 0xFFFF00});
+        const sunMesh = new THREE.Mesh(sphereGeometry, sunMaterial);
+        butterflyPivot.add(sunMesh);
+
  
         function resizeRendererToDisplaySize(renderer) {
           const canvas = renderer.domElement;
@@ -92,7 +101,7 @@ export default class Flame extends React.Component{
         }
       
       
-
+        const targetPosition = new THREE.Vector3();
         function render() {
       
           if (resizeRendererToDisplaySize(renderer)) {
@@ -100,6 +109,14 @@ export default class Flame extends React.Component{
             camera.aspect = canvas.clientWidth / canvas.clientHeight;
             camera.updateProjectionMatrix();
           }
+
+          solarSystem.getWorldPosition(targetPosition);
+          butterflyPivot.lookAt(targetPosition);
+
+          // go to the target position
+          butterflyPivot.position.x += (solarSystem.position.x - butterflyPivot.position.x) / 60
+          butterflyPivot.position.y += (solarSystem.position.y - butterflyPivot.position.y) / 60
+          // butterflyPivot.position.z += (solarSystem.position.z - butterflyPivot.position.z) / 60
 
           renderer.render(scene, camera);
       
