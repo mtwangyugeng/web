@@ -1,7 +1,6 @@
 import React from 'react';
 import * as THREE from 'three';
 import './Flame.css';
-import {GUI} from "dat.gui"
 import { FlyControls } from '../../../../node_modules/three/examples/jsm/controls/FlyControls.js';
 import { Lensflare, LensflareElement } from '../../../../node_modules/three/examples/jsm/objects/Lensflare.js';
 
@@ -59,8 +58,6 @@ export default class Flame extends React.Component{
 				const textureFlare3 = textureLoader.load( 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/lensflare/lensflare3.png' );
 
 				addLight( 0.55, 0.9, 0.5, 5000, 0, - 1000 );
-				// addLight( 0.08, 0.8, 0.5, 0, 0, - 1000 );
-				// addLight( 0.995, 0.5, 0.9, 5000, 5000, - 1000 );
 
 				function addLight( h, s, l, x, y, z ) {
 
@@ -80,14 +77,45 @@ export default class Flame extends React.Component{
 
 				}
 
-        const butterflyPivot = new THREE.Object3D();
-        scene.add(butterflyPivot);
-        const sphereGeometry = new THREE.SphereGeometry(
-          10, 3, 3);
-        const sunMaterial = new THREE.MeshPhongMaterial({emissive: 0xFFFF00});
-        const sunMesh = new THREE.Mesh(sphereGeometry, sunMaterial);
-        butterflyPivot.add(sunMesh);
+        const butterflyMain = new THREE.Object3D();
+        butterflyMain.position.z = 20
+        scene.add(butterflyMain);
 
+        const butterflyPivot = new THREE.Object3D();
+        // butterflyPivot.rotation.set(0, -1, -1);
+        butterflyMain.add(butterflyPivot);
+
+        const sphereGeometry = new THREE.CircleGeometry(10, 5);
+        const sunMaterial = new THREE.MeshPhongMaterial({emissive: 0xFFFF00, side: THREE.DoubleSide,});
+        
+        const leftwingpivot = new THREE.Object3D();
+        butterflyPivot.add(leftwingpivot)
+        const sunMesh = new THREE.Mesh(sphereGeometry, sunMaterial);
+        sunMesh.position.x = 10
+        leftwingpivot.rotation.set(Math.PI / 2, 0, 0);
+        leftwingpivot.add(sunMesh);
+
+        
+
+        const rightwingpivot = new THREE.Object3D();
+        butterflyPivot.add(rightwingpivot)
+
+        const rightwingMesh = new THREE.Mesh(sphereGeometry, sunMaterial);
+        rightwingMesh.position.x = 10
+        rightwingpivot.rotation.set(Math.PI / 2, 0, 0);
+        
+        rightwingpivot.add(rightwingMesh);
+
+        const sg = new THREE.CircleGeometry(5, 5);
+        const rightwingMeshdown = new THREE.Mesh(sg, sunMaterial);
+        rightwingMeshdown.position.x = 6
+        rightwingMeshdown.position.y = -10
+        const leftwingMeshdown = new THREE.Mesh(sg, sunMaterial);
+        leftwingMeshdown.position.x = 6
+        leftwingMeshdown.position.y = -10
+        
+        rightwingpivot.add(rightwingMeshdown);
+        leftwingpivot.add(leftwingMeshdown);
  
         function resizeRendererToDisplaySize(renderer) {
           const canvas = renderer.domElement;
@@ -99,10 +127,13 @@ export default class Flame extends React.Component{
           }
           return needResize;
         }
-      
+        
       
         const targetPosition = new THREE.Vector3();
-        function render() {
+        var cnt = 0
+        var tianwei = true
+        var inc = 0.05
+        function render(time) {
       
           if (resizeRendererToDisplaySize(renderer)) {
             const canvas = renderer.domElement;
@@ -111,12 +142,30 @@ export default class Flame extends React.Component{
           }
 
           solarSystem.getWorldPosition(targetPosition);
-          butterflyPivot.lookAt(targetPosition);
+
+          butterflyMain.lookAt(targetPosition);
+          console.log(butterflyPivot.position.x, targetPosition.x)
 
           // go to the target position
-          butterflyPivot.position.x += (solarSystem.position.x - butterflyPivot.position.x) / 60
-          butterflyPivot.position.y += (solarSystem.position.y - butterflyPivot.position.y) / 60
-          // butterflyPivot.position.z += (solarSystem.position.z - butterflyPivot.position.z) / 60
+          {
+            butterflyMain.position.x += (solarSystem.position.x + 13 - butterflyMain.position.x) / 60
+            butterflyMain.position.y += (solarSystem.position.y + 13 - butterflyMain.position.y) / 60
+          }
+
+          if(tianwei){
+            cnt += inc
+            
+          }else{
+            cnt -= inc
+          }
+          //  rightwingMesh.rotation.set(Math.PI / 2, cnt, 0);
+          // rightwingMesh.setRotationFromAxisAngle(butterflyPivot.y,cnt)
+          leftwingpivot.rotation.set(Math.PI / 2, -cnt, 0);
+          rightwingpivot.rotation.set(Math.PI / 2, cnt, 0);
+          if(cnt >= 1)
+            tianwei = false
+          if(cnt <= 0)
+            tianwei = true
 
           renderer.render(scene, camera);
       
