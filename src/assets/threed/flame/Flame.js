@@ -21,15 +21,14 @@ export default class Flame extends React.Component{
         )
     }
     componentDidMount() {
+      // renderer, scene, and camera
         // hook the renderer to the canvas
         const canvas = this.mount
         const renderer = new THREE.WebGLRenderer({
             antialias: true,
           canvas: canvas});
-          renderer.outputEncoding = THREE.sRGBEncoding;
+        renderer.outputEncoding = THREE.sRGBEncoding;
             
-
-        const clock = new THREE.Clock();
         
         const scene = new THREE.Scene();
         scene.background = new THREE.Color().setHSL( 0.51, 0.4, 0.01 );
@@ -40,31 +39,20 @@ export default class Flame extends React.Component{
         camera.up.set(0, 0, 1);
         camera.lookAt(0, 0, 0);
 
-        // world
 
-        const s = 250;
-
-        // an array of objects who's rotation to update
-        const objects = [];
-
-        const solarSystem = new THREE.Object3D();
-        scene.add(solarSystem);
-        objects.push(solarSystem);
-      
+        // the target flame
+        const flamepivot = new THREE.Object3D();
+        scene.add(flamepivot);
         // lensflares
 				const textureLoader = new THREE.TextureLoader();
-
 				const textureFlare0 = textureLoader.load( 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/lensflare/lensflare0.png' );
 				const textureFlare3 = textureLoader.load( 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/lensflare/lensflare3.png' );
-
-				addLight( 0.55, 0.9, 0.5, 5000, 0, - 1000 );
-
-				function addLight( h, s, l, x, y, z ) {
-
+				addLight( 0.55, 0.9, 0.5);
+				function addLight( h, s, l) {
 					const light = new THREE.PointLight( 0xffffff, 1.5, 2000 );
 					light.color.setHSL( h, s, l );
 					// light.position.set( x, y, z );
-					solarSystem.add( light );
+					flamepivot.add( light );
 
 					const lensflare = new Lensflare();
           console.log("ccc", lensflare)
@@ -74,15 +62,14 @@ export default class Flame extends React.Component{
 					lensflare.addElement( new LensflareElement( textureFlare3, 120, 0.9 ) );
 					lensflare.addElement( new LensflareElement( textureFlare3, 70, 1 ) );
 					light.add( lensflare );
-
 				}
 
+        //the butterfly
         const butterflyMain = new THREE.Object3D();
         butterflyMain.position.z = 20
         scene.add(butterflyMain);
 
         const butterflyPivot = new THREE.Object3D();
-        // butterflyPivot.rotation.set(0, -1, -1);
         butterflyMain.add(butterflyPivot);
 
         const sphereGeometry = new THREE.CircleGeometry(10, 5);
@@ -141,15 +128,15 @@ export default class Flame extends React.Component{
             camera.updateProjectionMatrix();
           }
 
-          solarSystem.getWorldPosition(targetPosition);
+          flamepivot.getWorldPosition(targetPosition);
 
           butterflyMain.lookAt(targetPosition);
           console.log(butterflyPivot.position.x, targetPosition.x)
 
           // go to the target position
           {
-            butterflyMain.position.x += (solarSystem.position.x + 13 - butterflyMain.position.x) / 60
-            butterflyMain.position.y += (solarSystem.position.y + 13 - butterflyMain.position.y) / 60
+            butterflyMain.position.x += (flamepivot.position.x + 13 - butterflyMain.position.x) / 60
+            butterflyMain.position.y += (flamepivot.position.y + 13 - butterflyMain.position.y) / 60
           }
 
           if(tianwei){
@@ -185,7 +172,7 @@ export default class Flame extends React.Component{
             var dir = vector.sub( camera.position ).normalize();
             var distance = - camera.position.z / dir.z;
             var pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
-            solarSystem.position.copy(pos);
+            flamepivot.position.copy(pos);
         });
 
         
