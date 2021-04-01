@@ -1,0 +1,28 @@
+.Connection-linkedin {
+    background: url(LI-In-Bug.png);
+    background-size: 100% 100%;
+    width: 4.5vmin;
+}
+
+.Connection-github {
+    background: url(GitHub-Mark-Light-64px.png);
+    background-size: 100% 100%;
+    width: 4vmin;
+}
+
+.Connection-email {
+    background: url(Gmail_2020.png);
+    background-size: 100% 100%;
+    width: 5vmin;
+}
+
+.Connection-icons{
+    height: 100%;
+    margin-right: 4vmin;
+    cursor:pointer;
+    opacity: 0.7;
+    transition: 0.7s;
+}
+.Connection-icons:hover{
+    opacity: 1;
+}

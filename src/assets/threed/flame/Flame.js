@@ -69,6 +69,10 @@ export default class Flame extends React.Component{
         butterflyMain.position.z = 20
         scene.add(butterflyMain);
 
+        
+
+
+
         const butterflyPivot = new THREE.Object3D();
         butterflyMain.add(butterflyPivot);
 
@@ -81,8 +85,6 @@ export default class Flame extends React.Component{
         sunMesh.position.x = 10
         leftwingpivot.rotation.set(Math.PI / 2, 0, 0);
         leftwingpivot.add(sunMesh);
-
-        
 
         const rightwingpivot = new THREE.Object3D();
         butterflyPivot.add(rightwingpivot)
@@ -120,6 +122,7 @@ export default class Flame extends React.Component{
         var cnt = 0
         var tianwei = true
         var inc = 0.05
+
         function render(time) {
       
           if (resizeRendererToDisplaySize(renderer)) {
@@ -160,7 +163,7 @@ export default class Flame extends React.Component{
         }
         
         var mouse = {x: 0, y: 0};
-        canvas.addEventListener('mousemove', function (event) {
+        window.addEventListener('mousemove', function (event) {
           event.preventDefault();
           // console.log(event.clientX, event.clientY)
           mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
