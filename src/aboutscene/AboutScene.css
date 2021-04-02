@@ -1,0 +1,36 @@
+.AboutScene-main{
+    background-color: rgb(223, 129, 6);
+    color: white;
+}
+
+.AboutScene-title{
+    font-size: 3.5vmin;
+    font-weight: bold;
+    text-align: center;
+    /* opacity: 0;
+    transition: 2s; */
+}
+
+.AboutScene-underline{
+    position: relative;
+    /* transition: 1s; */
+    border-top: solid 2px;
+    width: 0%; 
+    left: 50%;
+    padding-bottom: 1%;
+    
+}
+
+
+.AboutScene-underline-show{
+    /* width: 60%;
+    left: 20%; */
+    animation-name: AboutScene-underline-animation;
+    animation-duration: 2s;  
+    animation-fill-mode: forwards;
+}
+
+@keyframes AboutScene-underline-animation {
+    from {width: 0%; left: 50%;pointer-events: none;}
+    to {width: 60%;left: 20%; pointer-events: none;}
+  }

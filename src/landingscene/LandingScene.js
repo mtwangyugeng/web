@@ -10,7 +10,7 @@ export default class LandingScene extends React.Component{
         return(
         <div className="LandingScene-main">
             <div >
-                <div className = "LandingScene-intro"><StringAnimation strings = {["Hi, I am Yu Geng. ", "Let's work together. "]}/></div>
+                <div className = "LandingScene-intro"><StringAnimation strings = {["Hi, I am Yu Geng.", "You can call me Simon." ,"Let's work together."]}/></div>
                 <div className = "LandingScene-connect">
                     <div className = "LandingScene-connect-inner">
                         <Connection linkedin = "https://www.linkedin.com/in/yu-geng-simon-wang/" github = "https://github.com/mtwangyugeng" email = "mtwangyugeng@gmail.com"/>

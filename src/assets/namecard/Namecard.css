@@ -1,0 +1,18 @@
+.Namecard-main{
+    display: flex;
+    /* background-color: brown; */
+    height: 100%;
+    width: 100%;
+}
+
+.Namecard-profilepic{
+    border-radius:50%;
+}
+
+.Namecard-rightcol{
+    margin-left: 5%;
+}
+
+.Namecard-bio{
+    font-size: 80%;
+}

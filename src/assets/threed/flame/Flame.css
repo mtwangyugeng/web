@@ -3,6 +3,6 @@
     height: 100vh;
     display: block;
     /* cursor: none; */
-    position: absolute;
+    position: fixed;
     z-index: -1;
  }

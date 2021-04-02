@@ -6,13 +6,19 @@ import reportWebVitals from './reportWebVitals';
 
 import LandingScene from './landingscene/LandingScene';
 import Flame from './assets/threed/flame/Flame'
+import ProjectScene from './projectscene/ProjectScene';
+import AboutScene from './aboutscene/AboutScene';
+import ContactScene from './contactscene/ContactScene';
+import FooterScene from './footerscene/FooterScene';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    {/* <StringAnimation strings = {["yoloswag4jesus","I am Sexy", "and I know it"]}/> */}
     <Flame />
     <LandingScene/>
+    <AboutScene/>
+    <ProjectScene/>
+    <ContactScene/>
+    <FooterScene/>
   </React.StrictMode>,
   document.getElementById('root')
 );

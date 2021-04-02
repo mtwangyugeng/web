@@ -24,7 +24,7 @@ export default class StringAnimation extends React.Component{
 
     tick = null
     componentDidMount() {
-        this.tick = setInterval(this.handletick, 150)
+        this.tick = setInterval(this.handletick, 125)
     }
     
     handletick = () => {
@@ -38,7 +38,7 @@ export default class StringAnimation extends React.Component{
             if (this.state.content === this.props.strings[this.state.currstring]){
                 clearInterval(this.tick)
                 setTimeout(() => {
-                    this.tick = setInterval(this.handletick, 150)
+                    this.tick = setInterval(this.handletick, 125)
                 }, 2000);
                 this.setState({da: true})
             }else{

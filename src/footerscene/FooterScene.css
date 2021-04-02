@@ -1,0 +1,7 @@
+.FooterScene-main{
+    background-color: rgb(4, 62, 138,0);
+    height: 6vmin;
+    width: 100vw;
+
+    display: flex;
+}
