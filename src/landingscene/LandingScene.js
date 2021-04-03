@@ -17,8 +17,19 @@ export default class LandingScene extends React.Component{
                     </div>
                 </div>
             </div>
+            <div className="LandingScene-downbutton-container">
+                <div className = "LandingScene-downbutton" onClick = {this.moveDown}/>
+            </div>
         </div>
         )
+    }
+
+    moveDown = () =>{
+        window.scrollTo({
+            top: window.innerHeight,
+            left: 0,
+            behavior: 'smooth'
+          })
     }
 
 }

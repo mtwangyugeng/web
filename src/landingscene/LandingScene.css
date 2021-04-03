@@ -1,5 +1,4 @@
 .LandingScene-main{
-    background-color: (0,0,0,0);
     height: 100vh;
     width: 100vw;
     display:flex;
@@ -24,4 +23,31 @@
 
 .LandingScene-connect-inner{
     display: flex;
+}
+
+.LandingScene-downbutton-container{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    height: 7vmin;
+}
+
+.LandingScene-downbutton{
+    width: 4vmin;
+    height: 4vmin;
+    font-size:4vmin;
+    user-select: none;
+    border-radius: 50%;
+    text-align: center;
+    transition: box-shadow 1s;
+    background: url(arrow.png);
+    background-size: 100% 100%;
+}
+
+.LandingScene-downbutton:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 8px #ffffff;
 }
