@@ -3,17 +3,15 @@ import './AboutScene.css';
 
 import NameCard from '../assets/namecard/Namecard'
 import selfportret from "./self.png"
+import SceneTitle from '../assets/scenetitle/SceneTitle';
 
 export default class AboutScene extends React.Component{
     
-    pos = React.createRef()
-    state = {show: false}
 
     render() {
         return(
         <div className="AboutScene-main">
-            <div ref = {this.pos} className="AboutScene-title">About</div>
-            <div className = {"AboutScene-underline " + (this.state.show ? "AboutScene-underline-show":"")}/>
+            <SceneTitle title = "About"/>
             <div style = {{width: '100vmin', height: '33vmin', fontSize: '2vmin', margin: "auto"}}>
                 <NameCard 
                     profilepic = {selfportret}
@@ -29,20 +27,6 @@ export default class AboutScene extends React.Component{
             </div>
         </div>
         )
-    }
-
-    componentDidMount(){
-        this.handlevisible()
-        window.addEventListener('scroll', this.handlevisible);
-    } componentWillUnmount() {
-        window.removeEventListener('scroll', this.handlevisible)
-    }    
-
-    handlevisible = () => {
-        if(!this.show && (this.pos.current.offsetTop + this.pos.current.offsetHeight) < (window.scrollY + window.innerHeight) && this.pos.current.offsetTop + this.pos.current.offsetHeight > window.scrollY)
-            this.setState({show: true})
-        else
-            this.setState({show: false})
     }
 
 }

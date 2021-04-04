@@ -1,0 +1,49 @@
+.ContactInfo-main{
+    position: relative;
+    background-color: rgb(83, 69, 69);
+    margin:auto;
+    width: 25vmin;
+    height: 30vmin;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10%;
+    font-size: 1.7vmin;
+    opacity: 0;
+    transition: 1s;
+}
+
+.ContactInfo-icon-container{
+    margin-top: 3vmin;
+    margin-bottom: 1vmin;
+    height: 20%;
+    display: flex;
+}
+
+.ContactInfo-icon{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.ContactInfo-title{
+    font-weight: bold;
+    text-align: center;
+    color: rgb(223, 176, 49);
+}
+
+.ContactInfo-description{
+    color: white;
+    margin: 3vmin;
+    font-size: 80%;
+}
+
+.ContactInfo-show{
+    opacity: 1;
+    animation-name: badges;
+    animation-duration: 0.7s;  
+    animation-fill-mode: backwards;
+    transition: 1s;
+}
+@keyframes badges {
+    from {top: 10vmin; opacity: 0;pointer-events: none;}
+    to {top: 0vmin; opacity: 1; pointer-events: none;}
+  }
