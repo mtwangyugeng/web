@@ -55,7 +55,7 @@ export default class Flame extends React.Component{
 					flamepivot.add( light );
 
 					const lensflare = new Lensflare();
-          console.log("ccc", lensflare)
+          // console.log("ccc", lensflare)
 					lensflare.addElement( new LensflareElement( textureFlare0, 700, 0, light.color ) );
 					lensflare.addElement( new LensflareElement( textureFlare3, 60, 0.6 ) );
 					lensflare.addElement( new LensflareElement( textureFlare3, 70, 0.7 ) );
@@ -134,7 +134,7 @@ export default class Flame extends React.Component{
           flamepivot.getWorldPosition(targetPosition);
 
           butterflyMain.lookAt(targetPosition);
-          console.log(butterflyPivot.position.x, targetPosition.x)
+          // console.log(butterflyPivot.position.x, targetPosition.x)
 
           // go to the target position
           {
