@@ -2,20 +2,25 @@ import React from 'react';
 import './SkillCard.css';
 
 import ProgressBar from './progressbar/ProgressBar'
+import { disableScroll,enableScroll } from '../util/disablescroll/DisableScroll'
 
 export default class SkillCard extends React.Component{
     state = {
-        projects_open: false
+        projects_open: false,
+        show: ""
     }
-    cardref = React.createRef()
+    pos = React.createRef()
     render(){
         return (
             <>
-                <div className = {"SkillCard-projects " + (this.state.projects_open?'SkillCard-projects-show':'')}>
+                <div className = {"SkillCard-projects " + (this.state.projects_open?'SkillCard-projects-show':'')} onScroll = {null}>
+                    <div style={{height:'50%'}}/>
+                    <div className = 'SkillCard-projects-wrapper'>
                     {this.props.projects}
+                    </div>
                 </div>
-                <div>
-                <div ref = {this.cardref} className= {"SkillCard " + (this.state.projects_open?'SkillCard-projects-card':'')} onClick={this.clickedCard}>
+                <div ref = {this.pos} className = {"SkillCard-wrap " + this.state.show}>
+                <div className= {"SkillCard " + (this.state.projects_open?'SkillCard-projects-card':'')} onClick={this.clickedCard}>
                     <div className="SkillCard-inner">
                         <div className = "SkillCard-main">
                             <div className = "SkillCard-top">
@@ -44,37 +49,31 @@ export default class SkillCard extends React.Component{
             </>
         );
     }
-    temp = null
+    componentDidMount() {
+        this.handlevisible()
+        window.addEventListener('scroll', this.handlevisible);
+    } componentWillUnmount() {
+        window.removeEventListener('scroll', this.handlevisible)
+    }
+
+    handlevisible = () => {
+        if(!this.show && (this.pos.current.offsetTop + this.pos.current.offsetHeight/2) < (window.scrollY + window.innerHeight) && this.pos.current.offsetTop + this.pos.current.offsetHeight > window.scrollY)
+            this.setState({show: "SkillCard-show"})
+        else
+            this.setState({show: ""})
+    }
+
     clickedCard = () => {
         if(this.state.projects_open){
-            this.cardref.current.style.top = this.temp.top + "px"
-            this.cardref.current.style.right = this.temp.right + 'px'
-            this.cardref.current.style.left = this.temp.left + "px"
             this.setState({projects_open: false})
+            enableScroll()
         }
         else{
-            this.temp = this.cardref.current.getBoundingClientRect()
-            this.cardref.current.style.top = this.temp.top + "px"
-            this.cardref.current.style.right = this.temp.right + 'px'
-            this.cardref.current.style.left = this.temp.left + "px"
-            
-            // this.cardref.current.style.top = 0 + "px"
-            // this.cardref.current.style.right = 0 + 'px'
-            // this.cardref.current.style.left = 0 + "px"
             this.setState({projects_open: true})
+            disableScroll()
         }
     }
 
-    componentDidUpdate(prevState){
-        if(prevState.projects_open !== this.state.projects_open){
-            console.log('reeeeeeee');
-            if(this.state.projects_open){
-                console.log(this.cardref.current.style.top )
-                this.cardref.current.style.top = 0 + "px"
-                this.cardref.current.style.right = 0 + 'px'
-                this.cardref.current.style.left = 0 + "px"
-            }
-        }
+    
 
-    }
 }
