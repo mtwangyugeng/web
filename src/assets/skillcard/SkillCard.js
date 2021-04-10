@@ -10,12 +10,13 @@ export default class SkillCard extends React.Component{
         show: ""
     }
     pos = React.createRef()
+    wrapper = React.createRef()
     render(){
         return (
             <>
                 <div className = {"SkillCard-projects " + (this.state.projects_open?'SkillCard-projects-show':'')} onScroll = {null}>
                     <div style={{height:'50%'}}/>
-                    <div className = 'SkillCard-projects-wrapper'>
+                    <div ref = {this.wrapper} className = 'SkillCard-projects-wrapper'>
                     {this.props.projects}
                     </div>
                 </div>
@@ -67,6 +68,10 @@ export default class SkillCard extends React.Component{
         if(this.state.projects_open){
             this.setState({projects_open: false})
             enableScroll()
+            this.wrapper.current.scrollTo({
+                top: 0,
+                left: 0,
+              })
         }
         else{
             this.setState({projects_open: true})

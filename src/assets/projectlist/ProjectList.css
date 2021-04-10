@@ -1,0 +1,66 @@
+.ProjectList-project{
+    background-color: rgb(134, 134, 182);
+    margin-bottom: 0.5%;
+    border-radius: 2vmin;
+    height: 29.5%;
+    width: 100%;
+    display: flex;
+}
+
+.ProjectList-image{
+    background-color: rgb(243, 184, 223);
+    width: 13%;
+    height: 90%;
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-left:1%;
+    border-radius: 10%;
+}
+
+.ProjectList-words{
+    background-color:ivory;
+    margin-top:auto;
+    margin-bottom:auto;
+    height: 90%;
+    width: 80%;
+    margin-left:1%;
+    border-radius: 3%;
+    padding: 0.5%;
+    box-sizing: border-box;
+    font-size: 1.7vmin;
+    animation-name: ProjectList-words;
+    animation-duration: 0.8s;  
+    animation-fill-mode: backwards;
+  }
+@keyframes ProjectList-words {
+    from {font-size: 0vmin;pointer-events: none;}
+    to {font-size: 1.7vmin; pointer-events: none;}
+  }
+
+.ProjectList-title{
+    font-weight: bold;
+}
+
+.ProjectList-description{
+    font-size: 90%;
+}
+
+.ProjectList-links{
+    display: flex;
+    flex-direction: column;
+    width: 10%
+    
+}
+
+.ProjectList-links-image{
+    height: 30%;
+    width: 38%;
+    margin: auto;
+    opacity: 0.6;
+    transition: 0.7s;
+}
+
+.ProjectList-links-image:hover{
+    cursor: pointer;
+    opacity: 1
+}
