@@ -11,10 +11,10 @@ export default class ProjectScene extends React.Component{
             <div style={{color: 'white', paddingTop: "5vmin"}}><SceneTitle title = 'My Deck'/></div>
             <div className="ProjectScene-cardfield">
                 <SkillCard 
-                    title = 'React Master (self-proclaimed)' 
+                    title = 'Web-design Adapt' 
                     image = 'https://cdn.iconscout.com/icon/free/png-256/react-1-282599.png'
                     tag = 'Front-end'
-                    progress = {10}
+                    progress = {9}
                     description = 'I use react.js library and its JSX expressions to help me design and code better websites.'
                     footer = 'For example, this website.'
                     projects = {
@@ -36,10 +36,10 @@ export default class ProjectScene extends React.Component{
                             glink = 'https://github.com/mtwangyugeng/personalpage'
                         />
                         <ProjectList
-                            projectpic = 'https://raw.githubusercontent.com/mtwangyugeng/personalpage/master/public/logo_OtF_icon.ico'
+                            projectpic = 'https://raw.githubusercontent.com/mtwangyugeng/web/main/public/favicon.ico'
                             title = 'This Website'
-                            description = {<><div>My first attempt of making a portfolio website for myself.</div>
-                                            <div>The high reusablity of the components and the use of REST API to bring in the infomation from the Github servers is its highlights. However, there was too much focus on designing the code so that it is useable that not enough effort waws put into the creativity.</div></>}
+                            description = {<><div>Round two! It is this website. I think I did a pretty good job.</div>
+                                            <div>The butterfly scene for background is made by three.js. Like my previous website the high reusablity of the components is still one of the biggest sell point. But this time, more thoughts were put in to allow more rooms for creativity.</div></>}
                             hlink = 'https://mtwangyugeng.github.io/personalpage/'
                             glink = 'https://github.com/mtwangyugeng/personalpage'
                         />
@@ -47,13 +47,32 @@ export default class ProjectScene extends React.Component{
                     }
                 />
                 <SkillCard 
+                    title = 'Computer Science & Math Bachelor' 
+                    image = 'https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Utoronto_coa.svg/1200px-Utoronto_coa.svg.png'
+                    tag = 'Foundations'
+                    progress = {10}
+                    description = {<div style = {{fontSize:'80%'}}>I have strong knowledge of software fundamentals such as data structures, algorithm design, design patterns in object-oriented programming, functional programming, and operating systems</div>}
+                    footer = 'My focus: mathmatic analysis and software development.'
+                    projects = 'Coming soon'
+                />
+
+                <SkillCard 
+                    title = 'Database Novice' 
+                    image = 'https://1000logos.net/wp-content/uploads/2020/08/MySQL-Logo.jpg'
+                    tag = 'Backend'
+                    progress = {2}
+                    description = 'I was in charge of linking MySQL APIs to the front-end of a group project'
+                    footer = 'Well, at least I know how MySQL works.'
+                    projects = 'Coming soon'
+                />
+                <SkillCard 
                     title = 'Noob Master' 
                     image = 'https://img.game8.co/3277849/73953a85412dad6ed3528b008201051d.png/show'
                     tag = 'Gaming'
                     progress = {11}
-                    description = 'Bodied Fatalis in Monster Hunter World.'
-                    footer = 'Trust me, it is pretty hard.'
-                    projects = {<ProjectList/>}
+                    description = 'I bodied Fatalis in Monster Hunter World with great-sword. Also did I mention I am diamond in League of Legend?'
+                    footer = 'Not with long-sword though; long-sword is kind of hard.'
+                    projects = {<img style = {{height: '100%', marginLeft: "30%",borderRadius:'10%'}} alt = 'meme pic' src = 'https://i.redd.it/dp2vyqannrd51.png'/>}
                 />
             </div>
         </div>
