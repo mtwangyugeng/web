@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/web/static/css/main.2ee3449d.chunk.css",
-    "main.js": "/web/static/js/main.969851a1.chunk.js",
-    "main.js.map": "/web/static/js/main.969851a1.chunk.js.map",
+    "main.css": "/web/static/css/main.8efe54ac.chunk.css",
+    "main.js": "/web/static/js/main.8ef030ef.chunk.js",
+    "main.js.map": "/web/static/js/main.8ef030ef.chunk.js.map",
     "runtime-main.js": "/web/static/js/runtime-main.5b1bc6cb.js",
     "runtime-main.js.map": "/web/static/js/runtime-main.5b1bc6cb.js.map",
     "static/js/2.aad74f94.chunk.js": "/web/static/js/2.aad74f94.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.4b9aa530.chunk.js": "/web/static/js/3.4b9aa530.chunk.js",
     "static/js/3.4b9aa530.chunk.js.map": "/web/static/js/3.4b9aa530.chunk.js.map",
     "index.html": "/web/index.html",
-    "static/css/main.2ee3449d.chunk.css.map": "/web/static/css/main.2ee3449d.chunk.css.map",
+    "static/css/main.8efe54ac.chunk.css.map": "/web/static/css/main.8efe54ac.chunk.css.map",
     "static/js/2.aad74f94.chunk.js.LICENSE.txt": "/web/static/js/2.aad74f94.chunk.js.LICENSE.txt",
     "static/media/Connection.css": "/web/static/media/Gmail_2020.bb90946b.png",
     "static/media/ProgressBar.css": "/web/static/media/red.2fb5792e.PNG",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.5b1bc6cb.js",
     "static/js/2.aad74f94.chunk.js",
-    "static/css/main.2ee3449d.chunk.css",
-    "static/js/main.969851a1.chunk.js"
+    "static/css/main.8efe54ac.chunk.css",
+    "static/js/main.8ef030ef.chunk.js"
   ]
 }
