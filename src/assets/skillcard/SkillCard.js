@@ -14,8 +14,9 @@ export default class SkillCard extends React.Component{
     render(){
         return (
             <>
-                <div className = {"SkillCard-projects " + (this.state.projects_open?'SkillCard-projects-show':'')} onScroll = {null}>
-                    <div style={{height:'50%'}}/>
+                <div className = {"SkillCard-projects " + (this.state.projects_open?'SkillCard-projects-show':'')}>
+                    <div style={{height:'45%'}}/>
+                    <div style={{height:'5%', textAlign:'center', userSelect:'none', textShadow: '0vmin 0vmin 1vmin white', fontSize:'1.8vmin'}}>Click the card to exit</div>
                     <div ref = {this.wrapper} className = 'SkillCard-projects-wrapper'>
                     {this.props.projects}
                     </div>

@@ -15,9 +15,10 @@ export default class ProjectScene extends React.Component{
                     image = 'https://cdn.iconscout.com/icon/free/png-256/react-1-282599.png'
                     tag = 'Front-end'
                     progress = {10}
-                    description = 'For example, this website.'
+                    description = 'I use react.js library and its JSX expressions to help me design and code better websites.'
                     footer = 'For example, this website.'
                     projects = {
+                        <>
                         <ProjectList
                             projectpic = 'https://image.flaticon.com/icons/png/512/2543/2543737.png'
                             title = 'Web-app Musicbox'
@@ -26,10 +27,27 @@ export default class ProjectScene extends React.Component{
                             hlink = 'https://mtwangyugeng.github.io/hbeatbox/'
                             glink = 'https://github.com/mtwangyugeng/hbeatbox'
                         />
+                        <ProjectList
+                            projectpic = 'https://raw.githubusercontent.com/mtwangyugeng/personalpage/master/public/logo_OtF_icon.ico'
+                            title = 'My First Personal Page'
+                            description = {<><div>My first attempt of making a portfolio website for myself.</div>
+                                            <div>The high reusablity of the components and the use of REST API to bring in the infomation from the Github servers is its highlights. However, there was too much focus on designing the code so that it is useable that not enough effort waws put into the creativity.</div></>}
+                            hlink = 'https://mtwangyugeng.github.io/personalpage/'
+                            glink = 'https://github.com/mtwangyugeng/personalpage'
+                        />
+                        <ProjectList
+                            projectpic = 'https://raw.githubusercontent.com/mtwangyugeng/personalpage/master/public/logo_OtF_icon.ico'
+                            title = 'This Website'
+                            description = {<><div>My first attempt of making a portfolio website for myself.</div>
+                                            <div>The high reusablity of the components and the use of REST API to bring in the infomation from the Github servers is its highlights. However, there was too much focus on designing the code so that it is useable that not enough effort waws put into the creativity.</div></>}
+                            hlink = 'https://mtwangyugeng.github.io/personalpage/'
+                            glink = 'https://github.com/mtwangyugeng/personalpage'
+                        />
+                        </>
                     }
                 />
                 <SkillCard 
-                    title = 'Monster Hunter' 
+                    title = 'Noob Master' 
                     image = 'https://img.game8.co/3277849/73953a85412dad6ed3528b008201051d.png/show'
                     tag = 'Gaming'
                     progress = {11}
