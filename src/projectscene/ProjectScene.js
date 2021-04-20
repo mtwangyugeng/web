@@ -36,7 +36,7 @@ export default class ProjectScene extends React.Component{
                             glink = 'https://github.com/mtwangyugeng/personalpage'
                         />
                         <ProjectList
-                            projectpic = 'https://raw.githubusercontent.com/mtwangyugeng/web/main/public/favicon.ico'
+                            projectpic = 'https://raw.githubusercontent.com/mtwangyugeng/web/main/public/logo_Simon.ico'
                             title = 'This Website'
                             description = {<><div>Round two! It is this website. I think I did a pretty good job.</div>
                                             <div>The butterfly scene for background is made by three.js. Like my previous website the high reusablity of the components is still one of the biggest sell point. But this time, more thoughts were put in to allow more rooms for creativity.</div></>}
