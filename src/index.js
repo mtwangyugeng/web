@@ -10,6 +10,7 @@ import ProjectScene from './projectscene/ProjectScene';
 import AboutScene from './aboutscene/AboutScene';
 import ContactScene from './contactscene/ContactScene';
 import FooterScene from './footerscene/FooterScene';
+import ToTopButton from './assets/totopbutton/ToTopButton'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,6 +20,7 @@ ReactDOM.render(
     <ProjectScene/>
     <ContactScene/>
     <FooterScene/>
+    <ToTopButton/>
   </React.StrictMode>,
   document.getElementById('root')
 );

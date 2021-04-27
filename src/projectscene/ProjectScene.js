@@ -53,7 +53,18 @@ export default class ProjectScene extends React.Component{
                     progress = {10}
                     description = {<div style = {{fontSize:'80%'}}>I have strong knowledge of software fundamentals such as data structures, algorithm design, design patterns in object-oriented programming, functional programming, and operating systems</div>}
                     footer = 'My focus: mathmatic analysis and software development.'
-                    projects = 'Coming soon'
+                    projects = {
+                        <>
+                        <ProjectList
+                            projectpic = 'https://raw.githubusercontent.com/mtwangyugeng/web/main/public/logo_Simon.ico'
+                            title = 'Algorithms and Data Structures'
+                            description = {<><div>I solve problems creatively with the algorithm knowledge I know.</div>
+                                            <div>Take a look at my gihub repository on data structures.</div>
+                                            </>}
+                            glink = 'https://github.com/mtwangyugeng/pythondatastructures'
+                        />
+                        </>
+                    }
                 />
 
                 <SkillCard 
@@ -65,7 +76,7 @@ export default class ProjectScene extends React.Component{
                     footer = 'Well, at least I know how MySQL works.'
                     projects = 'Coming soon'
                 />
-                <SkillCard 
+                {/* <SkillCard 
                     title = 'Noob Master' 
                     image = 'https://img.game8.co/3277849/73953a85412dad6ed3528b008201051d.png/show'
                     tag = 'Gaming'
@@ -73,7 +84,7 @@ export default class ProjectScene extends React.Component{
                     description = 'I bodied Fatalis in Monster Hunter World with great-sword. Also did I mention I am diamond in League of Legend?'
                     footer = 'Not with long-sword though; long-sword is kind of hard.'
                     projects = {<img style = {{height: '100%', marginLeft: "30%",borderRadius:'10%'}} alt = 'meme pic' src = 'https://i.redd.it/dp2vyqannrd51.png'/>}
-                />
+                /> */}
             </div>
         </div>
         )

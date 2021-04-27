@@ -18,8 +18,8 @@ export default class ProjectList extends React.Component{
                     </div>
                 </div>
                 <div className = "ProjectList-links">
-                    <img className = "ProjectList-links-image" alt = 'project pic' src = {hlink} onClick = {this.golink(this.props.hlink)}/>
-                    <img className = "ProjectList-links-image" alt = 'project pic' src = {gitlink} onClick = {this.golink(this.props.glink)}/>
+                    {(this.props.hlink) ? <img className = "ProjectList-links-image" alt = 'project pic' src = {hlink} onClick = {this.golink(this.props.hlink)}/> : ''}
+                    {(this.props.glink) ? <img className = "ProjectList-links-image" alt = 'project pic' src = {gitlink} onClick = {this.golink(this.props.glink)}/> : ''}
                 </div>
             </div>
         );
